@@ -24,8 +24,7 @@
 <section id="times" class="info" aria-labelledby="times-h">
   <div>
     <h2 id="times-h">Divine Liturgy</h2>
-    <!-- TODO: Add the regular Divine Liturgy day/time (not stated on the old site). -->
-    <p class="todo">TODO: regular Divine Liturgy schedule.</p>
+    <p>Fr. Elias travels up from Dallas as he is able, so we have no fixed weekly schedule. Upcoming Divine Liturgies and events are listed in the <a href="#calendar">calendar below</a>.</p>
     <p>See the calendar below for the current schedule of services.</p>
   </div>
   <div>
@@ -42,10 +41,9 @@
 
 <section id="calendar" aria-labelledby="cal-h">
   <h2 id="cal-h">Calendar</h2>
-  <p class="calview">View: <a href="#calendar" data-mode="MONTH" aria-pressed="true">Month</a> · <a href="#calendar" data-mode="AGENDA" aria-pressed="false">Agenda (list)</a></p>
   <div class="cal-wrap">
     <iframe id="cal" title="Parish calendar of services and events"
-      src="https://calendar.google.com/calendar/embed?src=byzantinecatholictulsa%40gmail.com&amp;ctz=America%2FChicago"
+      src="https://calendar.google.com/calendar/embed?src=byzantinecatholictulsa%40gmail.com&amp;ctz=America%2FChicago&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0"
       loading="lazy"></iframe>
   </div>
   <p class="small"><a href="https://calendar.google.com/calendar/embed?src=byzantinecatholictulsa%40gmail.com&amp;ctz=America%2FChicago&amp;mode=AGENDA">Open the calendar in a new page</a></p>
@@ -92,7 +90,7 @@ function setMode(m){
   f.src=f.src.replace(/&mode=\w+/,'')+'&mode='+m;
   document.querySelectorAll('[data-mode]').forEach(function(a){a.setAttribute('aria-pressed',a.dataset.mode===m);});
 }
-if(window.matchMedia('(max-width: 640px)').matches) setMode('AGENDA');
+
 </script>
 </body>
 </html>
