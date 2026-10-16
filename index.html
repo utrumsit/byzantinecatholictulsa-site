@@ -81,16 +81,5 @@
   <p>© St. Athanasius Byzantine Catholic Outreach of Tulsa</p>
   <p>Glory to Jesus Christ! Glory to Him forever!</p>
 </footer>
-<script>
-document.querySelectorAll('[data-mode]').forEach(function(a){
-  a.addEventListener('click',function(e){e.preventDefault();setMode(a.dataset.mode);});
-});
-function setMode(m){
-  var f=document.getElementById('cal');
-  f.src=f.src.replace(/&mode=\w+/,'')+'&mode='+m;
-  document.querySelectorAll('[data-mode]').forEach(function(a){a.setAttribute('aria-pressed',a.dataset.mode===m);});
-}
-
-</script>
 </body>
 </html>
