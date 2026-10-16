@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapel of the Theotokos and Saint Athanasius · Byzantine Catholic Outreach of Tulsa</title>
+<meta name="description" content="Byzantine Catholic Divine Liturgy in Tulsa, Oklahoma. Service times, calendar, and directions.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#calendar">Skip to calendar</a>
+<header class="masthead">
+  <p class="eyebrow">Byzantine Catholic Outreach of Tulsa, Oklahoma</p>
+  <h1>Chapel of the Theotokos<br>and Saint Athanasius</h1>
+  <p class="verse">“O taste and see that the Lord is good!” <span>(Psalm 34)</span></p>
+  <nav aria-label="Main">
+    <a href="#times">Services</a> <a href="#calendar">Calendar</a> <a href="#new">New here?</a> <a href="#contact">Contact</a>
+    <!-- TODO: Replace #donate with the real giving URL once Nathan Stene finishes setting up online giving. -->
+    <a class="donate" href="#donate">Donate</a>
+  </nav>
+</header>
+
+<main>
+<section id="times" class="info" aria-labelledby="times-h">
+  <div>
+    <h2 id="times-h">Divine Liturgy</h2>
+    <!-- TODO: Add the regular Divine Liturgy day/time (not stated on the old site). -->
+    <p class="todo">TODO: regular Divine Liturgy schedule.</p>
+    <p>See the calendar below for the current schedule of services.</p>
+  </div>
+  <div>
+    <h2>Location</h2>
+    <address>Catholic Charities of Eastern Oklahoma<br>2450 N Harvard Ave<br>Tulsa, OK 74115</address>
+    <p>Please enter through the main door facing Harvard Avenue.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=36.1895975,-95.9411342">Map &amp; directions</a></p>
+  </div>
+  <div>
+    <h2>Clergy</h2>
+    <p>Under the care of the Very Rev. Fr. Elias Rafaj, as an outreach of <a href="https://stbasilsinirving.org">Saint Basil the Great Byzantine Catholic Church</a> in Irving, Texas, and the <a href="https://archpitt.org">Byzantine Catholic Archeparchy of Pittsburgh</a>.</p>
+  </div>
+</section>
+
+<section id="calendar" aria-labelledby="cal-h">
+  <h2 id="cal-h">Calendar</h2>
+  <p class="calview">View: <a href="#calendar" data-mode="MONTH" aria-pressed="true">Month</a> · <a href="#calendar" data-mode="AGENDA" aria-pressed="false">Agenda (list)</a></p>
+  <div class="cal-wrap">
+    <iframe id="cal" title="Parish calendar of services and events"
+      src="https://calendar.google.com/calendar/embed?src=byzantinecatholictulsa%40gmail.com&amp;ctz=America%2FChicago"
+      loading="lazy"></iframe>
+  </div>
+  <p class="small"><a href="https://calendar.google.com/calendar/embed?src=byzantinecatholictulsa%40gmail.com&amp;ctz=America%2FChicago&amp;mode=AGENDA">Open the calendar in a new page</a></p>
+</section>
+
+<section id="new" aria-labelledby="new-h">
+  <h2 id="new-h">New here?</h2>
+  <p>Welcome! We are always glad to have visitors. The Byzantine Catholic Church is one of the 24 Churches that make up the Universal Catholic Church: we are Catholics in communion with the Pope of Rome, faithful to our Eastern Christian theology and heritage.</p>
+  <ul>
+    <li>The Divine Liturgy lasts at least an hour and a half. Watch and follow along; don’t worry about doing something wrong.</li>
+    <li>Almost everything is chanted, and we use a lot of incense.</li>
+    <li>We cross ourselves often, from right to left.</li>
+    <li>Standing is the normal posture, but please sit whenever you need to. In place of kneeling we make a profound bow at the Words of Institution and the Epiclesis.</li>
+    <li>Any properly disposed Catholic may receive Holy Communion. It is given by spoon: open your mouth wide, tongue back, and say nothing; the priest speaks for you.</li>
+  </ul>
+  <p>Please bring a light refreshment to share after the Liturgy and stay for social time.</p>
+  <p>Learn more: <a href="https://godwithusonline.org">God With Us Online</a> · <a href="https://www.youtube.com/@becomingbyzantine2827">Becoming Byzantine</a> · <a href="https://www.metropolitancantorinstitute.org/">Metropolitan Cantor Institute</a></p>
+</section>
+
+<section id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact</h2>
+  <p>Email: <a href="mailto:byzantinecatholictulsa@gmail.com">byzantinecatholictulsa@gmail.com</a></p>
+  <ul class="social">
+    <li><a href="https://www.facebook.com/byzantinecatholictulsa">Facebook</a></li>
+    <li><a href="https://www.instagram.com/byzantine_tulsa/">Instagram</a></li>
+    <li><a href="https://www.youtube.com/@byzantinecatholictulsa">YouTube</a></li>
+    <li><a href="https://www.flickr.com/photos/byzantinecatholictulsa/">Photos (Flickr)</a></li>
+  </ul>
+  <p><a class="donate big" href="#donate">Support the parish: Donate</a></p>
+  <!-- TODO: Donate links point to #donate until Nathan Stene provides the giving URL. -->
+</section>
+</main>
+
+<footer>
+  <p>© Chapel of the Theotokos and Saint Athanasius Byzantine Catholic Outreach of Tulsa</p>
+  <p>Glory to Jesus Christ! Glory to Him forever!</p>
+</footer>
+<script>
+document.querySelectorAll('[data-mode]').forEach(function(a){
+  a.addEventListener('click',function(e){e.preventDefault();setMode(a.dataset.mode);});
+});
+function setMode(m){
+  var f=document.getElementById('cal');
+  f.src=f.src.replace(/&mode=\w+/,'')+'&mode='+m;
+  document.querySelectorAll('[data-mode]').forEach(function(a){a.setAttribute('aria-pressed',a.dataset.mode===m);});
+}
+if(window.matchMedia('(max-width: 640px)').matches) setMode('AGENDA');
+</script>
+</body>
+</html>
