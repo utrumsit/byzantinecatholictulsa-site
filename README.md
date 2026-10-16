@@ -1,4 +1,4 @@
-# Chapel of the Theotokos and Saint Athanasius — website
+# St. Athanasius Byzantine Catholic Outreach of Tulsa — website
 
 Plain HTML/CSS, no build step. Hosted on GitHub Pages from the `main` branch root.
 
