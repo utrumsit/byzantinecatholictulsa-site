@@ -2,12 +2,19 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:1.125rem/1.6 "EB Garamond",Garamond,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
 a{color:var(--red)}a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem}
-.masthead{text-align:center;padding:2.5rem 1rem 1.5rem;border-bottom:3px double var(--gold)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:10}
+.masthead{text-align:center;padding:0;border-bottom:3px double var(--gold)}
+.hero{position:relative;display:flex;align-items:flex-end;min-height:22rem;overflow:hidden;color:#fbf8f1}
+.hero picture{position:absolute;inset:0;display:block}.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+.hero-text{position:relative;z-index:1;width:100%;padding:5rem 1.25rem 2.25rem;background:linear-gradient(to top,rgba(18,12,8,.86) 0%,rgba(18,12,8,.52) 38%,rgba(18,12,8,.18) 70%,rgba(18,12,8,.08) 100%)}
 .eyebrow{letter-spacing:.15em;text-transform:uppercase;font-size:.85rem;color:var(--gold);margin:0}
+.hero .eyebrow{color:#e8c86a;text-shadow:0 1px 8px rgba(0,0,0,.55)}
 h1{font-weight:normal;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin:.4rem 0}
+.hero h1{color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.45)}
 h2{font-weight:normal;color:var(--red);border-bottom:1px solid var(--rule);padding-bottom:.2rem;font-variant:small-caps;letter-spacing:.05em}
 .verse{font-style:italic;margin:.5rem 0 1rem}.verse span{font-style:normal;font-size:.9em}
+.hero .verse{color:#f3ead8;margin-bottom:0;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.masthead nav{padding:.85rem 1rem 1.15rem}
 nav a{margin:0 .5rem;text-decoration:none;display:inline-block;padding:.3rem 0}
 .donate{background:var(--red);color:#fff!important;padding:.45rem 1.1rem!important;border-radius:3px;text-decoration:none}
 .donate.big{font-size:1.2rem;display:inline-block;margin-top:.5rem}
@@ -18,7 +25,9 @@ section{margin:2rem 0}
 .todo{background:#fff3cd;border:1px dashed #b38b00;padding:.3rem .6rem}
 .cal-wrap{position:relative;width:100%;aspect-ratio:4/3;max-height:80vh;border:1px solid var(--rule);background:#fff}
 .cal-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-@media (max-width:640px){.cal-wrap{aspect-ratio:auto;height:75vh}}
+@media (max-width:640px){.cal-wrap{aspect-ratio:auto;height:75vh}.hero{min-height:24rem}.hero-text{padding:3.5rem 1rem 1.6rem}}
+@media (min-width:640px){.hero{min-height:28rem}}
+@media (min-width:960px){.hero{min-height:32rem}}
 [aria-pressed="true"]{font-weight:bold;text-decoration:none;color:var(--ink)}
 .small{font-size:.9rem}.social{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:1rem}
 footer{text-align:center;border-top:3px double var(--gold);padding:1.5rem;font-size:.95rem;color:#5a4c3a}
@@ -27,3 +36,9 @@ footer{text-align:center;border-top:3px double var(--gold);padding:1.5rem;font-s
 .connect-form button{background:var(--red);color:#fff;border:0;padding:.45rem 1.1rem;border-radius:3px;font:inherit;cursor:pointer}
 .connect-form button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 @media (min-width:640px){.connect-form{grid-template-columns:1fr 1fr}.connect-form button{grid-column:1/-1;justify-self:start}}
+.gallery{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0 0;padding:0}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--rule);background:#eee}
+.gallery .portrait{object-position:center 20%}
+.gallery .aisle{object-position:center center}
+@media (min-width:640px){.gallery{grid-template-columns:1fr 1fr;gap:.85rem}}
