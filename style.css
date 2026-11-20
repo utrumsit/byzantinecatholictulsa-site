@@ -37,7 +37,7 @@ footer{text-align:center;border-top:3px double var(--gold);padding:1.5rem;font-s
 .connect-form button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 @media (min-width:640px){.connect-form{grid-template-columns:1fr 1fr}.connect-form button{grid-column:1/-1;justify-self:start}}
 .gallery{display:grid;grid-template-columns:1fr;gap:.75rem;margin:1rem 0 0;padding:0}
-.gallery figure{margin:0}
+.gallery figure,.gallery picture{margin:0;display:block}
 .gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--rule);background:#eee}
 .gallery .portrait{object-position:center 20%}
 .gallery .aisle{object-position:center center}
